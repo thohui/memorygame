@@ -21,19 +21,19 @@ export const Board = () => {
           duration: 500,
           iterations: 1,
         });
-      }, index * 600);
+      }, (index + 1) * 600);
     });
   }, [solution]);
 
   return (
-      <div className="h-full w-full place-items-center grid grid-cols-3">
-        {[...Array(9)].map((_, i) => (
-          <Tile
-            key={i}
-            id={i}
-            ref={(el) => (tiles.current[i] = el as HTMLDivElement)}
-          />
-        ))}
-      </div>
+    <div className="h-full w-full place-items-center grid grid-cols-3">
+      {[...Array(9)].map((_, i) => (
+        <Tile
+          key={i}
+          id={i}
+          ref={(el) => (tiles.current[i] = el as HTMLDivElement)}
+        />
+      ))}
+    </div>
   );
 };
