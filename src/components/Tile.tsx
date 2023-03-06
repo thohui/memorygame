@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import { useGame } from "../game";
 
@@ -22,7 +23,19 @@ export const Tile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     <div
       ref={ref}
       onClick={handleClick}
-      className="w-1/2 h-1/2 bg-red-100 active:bg-red-400 cursor-pointer"
+      className={classNames(
+        "md:w-[200px]",
+        "md:h-[200px]",
+        "sm:w-[175px]",
+        "sm:h-[175px]",
+        "w-[100px]",
+        "h-[100px]",
+        "bg-red-100",
+        {
+          "cursor-pointer": !animating,
+          "active:bg-red-400": !animating,
+        },
+      )}
     >
     </div>
   );

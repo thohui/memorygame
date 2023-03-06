@@ -26,7 +26,7 @@ export const Board = () => {
   }, [solution]);
 
   return (
-    <div className="h-full w-full place-items-center grid grid-cols-3">
+    <div className="place-items-center grid grid-cols-3 gap-5">
       {[...Array(9)].map((_, i) => (
         <Tile
           key={i}
