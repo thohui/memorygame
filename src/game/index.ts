@@ -6,8 +6,7 @@ interface State {
   level: number;
   solution: number[];
   solutionIndex: number;
-  setAnimation: (value: boolean) => void;
-  setLevel: (value: number) => void;
+  setAnimating: (value: boolean) => void;
   nextLevel: () => void;
   processInput: (tile: number) => void;
   reset: () => void;
@@ -27,8 +26,7 @@ export const useGame = create<State>((set, get) => ({
   level: 0,
   solution: [randomizeTile()],
   solutionIndex: 0,
-  setAnimation: (value) => set(() => ({ animating: value })),
-  setLevel: (value) => set(() => ({ level: value })),
+  setAnimating: (value) => set(() => ({ animating: value })),
   nextLevel: () =>
     set((state) => ({
       level: state.level + 1,

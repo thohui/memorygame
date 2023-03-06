@@ -4,13 +4,13 @@ import { Tile } from "./Tile";
 
 export const Board = () => {
   const solution = useGame((state) => state.solution);
-  const setAnimation = useGame((state) => state.setAnimation);
+  const setAnimating = useGame((state) => state.setAnimating);
   const tiles = useRef<HTMLDivElement[]>(new Array<HTMLDivElement>(9));
 
   useEffect(() => {
-    setAnimation(true);
+    setAnimating(true);
     setTimeout(() => {
-      setAnimation(false);
+      setAnimating(false);
     }, solution.length * 650);
 
     solution.forEach((tile, index) => {
