@@ -23,7 +23,7 @@ export const Board = () => {
         });
       }, (index + 1) * 600);
     });
-  }, [solution]);
+  }, [solution, setAnimating]);
 
   return (
     <div className="place-items-center grid grid-cols-3 gap-5">
