@@ -13,10 +13,9 @@ export const Tile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   }));
 
   const handleClick = () => {
-    if (animating) {
-      return;
+    if (!animating) {
+      processInput(props.id);
     }
-    processInput(props.id);
   };
 
   return (
